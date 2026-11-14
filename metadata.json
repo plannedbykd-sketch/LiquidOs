@@ -1,0 +1,6 @@
+{
+  "name": "LiquidOS · AI-Native Flutter & Offline LLM Studio",
+  "description": "AI-native Dart Flutter runtime & workbench featuring local GGUF models, NNAPI mobile tensor acceleration, Claude 3.5 API replication layer, A2D encrypted audit logs, and offline task automation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
