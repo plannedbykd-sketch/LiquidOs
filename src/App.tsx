@@ -13,6 +13,8 @@ import { A2DVaultView } from './components/A2DVaultView';
 import { DartCodebaseView } from './components/DartCodebaseView';
 import { GoogleChatView } from './components/GoogleChatView';
 import { GoogleDriveView } from './components/GoogleDriveView';
+import { PerformanceMonitorView } from './components/PerformanceMonitorView';
+import { ValidatorGovernanceView } from './components/ValidatorGovernanceView';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('simulator');
@@ -58,6 +60,8 @@ export default function App() {
       <div className="lg:hidden flex items-center overflow-x-auto gap-2 px-4 py-2.5 bg-neutral-900 border-b border-neutral-800 text-xs font-mono">
         {[
           { id: 'simulator', label: 'Flutter Simulator' },
+          { id: 'performance', label: 'Perf Monitor' },
+          { id: 'governance', label: 'Validator Governance' },
           { id: 'claude_api', label: 'Claude 3.5 API' },
           { id: 'gguf_nnapi', label: 'GGUF & NNAPI' },
           { id: 'a2d_vault', label: 'A2D Vault' },
@@ -123,6 +127,10 @@ export default function App() {
             onOpenGoogleChat={handleOpenGoogleChat}
           />
         )}
+
+        {activeTab === 'performance' && <PerformanceMonitorView />}
+
+        {activeTab === 'governance' && <ValidatorGovernanceView />}
 
         {activeTab === 'claude_api' && <ClaudeApiInspectorView />}
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cpu, ShieldCheck, Zap } from 'lucide-react';
 
-export type ActiveTab = 'simulator' | 'claude_api' | 'gguf_nnapi' | 'a2d_vault' | 'codebase' | 'google_chat' | 'google_drive';
+export type ActiveTab = 'simulator' | 'performance' | 'governance' | 'claude_api' | 'gguf_nnapi' | 'a2d_vault' | 'codebase' | 'google_chat' | 'google_drive';
 
 interface HeaderProps {
   activeTab: ActiveTab;
@@ -28,14 +28,14 @@ export const Header: React.FC<HeaderProps> = ({
           <span className="text-xl font-extrabold tracking-wider text-amber-400 font-mono transition-transform group-hover:scale-105">
             LIQUID/OS
           </span>
-          <span className="hidden xl:inline-block text-xs font-mono px-2 py-0.5 rounded bg-neutral-900 border border-neutral-800 text-neutral-400">
+          <span className="hidden 2xl:inline-block text-xs font-mono px-2 py-0.5 rounded bg-neutral-900 border border-neutral-800 text-neutral-400">
             v2.4-NNAPI
           </span>
         </button>
       </div>
 
       {/* Zone 2: Clean single-line text navigation links */}
-      <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 text-xs xl:text-sm font-medium text-neutral-400">
+      <nav className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 text-xs xl:text-[13px] font-medium text-neutral-400">
         <button
           onClick={() => onSelectTab('simulator')}
           className={`transition-colors whitespace-nowrap shrink-0 hover:text-neutral-100 cursor-pointer ${
@@ -43,6 +43,22 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           Flutter Simulator
+        </button>
+        <button
+          onClick={() => onSelectTab('performance')}
+          className={`transition-colors whitespace-nowrap shrink-0 hover:text-neutral-100 cursor-pointer ${
+            activeTab === 'performance' ? 'text-amber-400 font-semibold' : ''
+          }`}
+        >
+          Perf Monitor
+        </button>
+        <button
+          onClick={() => onSelectTab('governance')}
+          className={`transition-colors whitespace-nowrap shrink-0 hover:text-neutral-100 cursor-pointer ${
+            activeTab === 'governance' ? 'text-amber-400 font-semibold' : ''
+          }`}
+        >
+          Validator Governance
         </button>
         <button
           onClick={() => onSelectTab('claude_api')}
